@@ -1,4 +1,4 @@
-## Cardano on Laravel
+## Cardano Laravel API
 A simple Laravel API project that allows users to connect to Cardano using [Blockfrost](https://blockfrost.io).
 
 ## Installation
@@ -12,6 +12,7 @@ Setup
 ```bash
 composer install
 cp .env.example .env
+php artisan scribe:generate
 ```
 
 Create an account on [Blockfrost](https://blockfrost.io) and create 2 new projects, one for testnet network and the other for mainnet. Add the project ids on .env file.
@@ -24,14 +25,9 @@ TESTNET=testnet********************************
 ## Usage
 Visit your project URL and navigate to the available tools built-in for endpoints information.
 
-Laravel Compass
+API Docs
 ```url
-[project-url]/compass
-```
-
-Documentation / Playground
-```url
-[project-url]/request-docs
+[project-url]/docs
 ```
 
 ### To Do

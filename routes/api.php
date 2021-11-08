@@ -5,7 +5,7 @@ use App\Http\Controllers\Cardano;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['prefix' => '/v0'], function () {
+Route::group(['prefix' => '/v1'], function () {
 
     Route::post('/register', [UserController::class, 'register']);
     Route::post('/login', [UserController::class, 'login']);

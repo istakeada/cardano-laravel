@@ -13,7 +13,13 @@ class UserController extends Controller
     {
         return $user->createToken($user->name)->plainTextToken;
     }
-
+    
+    /**
+     * Register
+     *
+     * @param  mixed $request
+     * @return void
+     */
     public function register(Request $request)
     {
         $request->validate([
@@ -31,7 +37,13 @@ class UserController extends Controller
 
         return response(['user' => $user, 'token' => $this->createToken($user)], 201);
     }
-
+    
+    /**
+     * Login
+     *
+     * @param  mixed $request
+     * @return void
+     */
     public function login(Request $request)
     {
         $request->validate([
@@ -49,12 +61,23 @@ class UserController extends Controller
 
         return response(['user' => $user, 'token' => $this->createToken($user)], 201);
     }
-
+    
+    /**
+     * Profile
+     *
+     * @return void
+     */
     public function info()
     {
         return response(['user' => auth()->user()]);
     }
-
+    
+    /**
+     * Update Profile
+     *
+     * @param  mixed $request
+     * @return void
+     */
     public function update(Request $request)
     {
         $user = auth()->user();
@@ -78,7 +101,12 @@ class UserController extends Controller
 
         return response(['message' => 'User information updated', 'user' => auth()->user()]);
     }
-
+    
+    /**
+     * Logout
+     *
+     * @return void
+     */
     public function logout()
     {
         auth()->user()->currentAccessToken()->delete();

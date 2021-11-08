@@ -1,8 +1,11 @@
 /node_modules
 /public/hot
 /public/storage
+/public/vendor/scribe
+/resources/views/scribe
 /storage/*.key
 /vendor
+.scribe
 .env
 .env.backup
 .phpunit.result.cache
